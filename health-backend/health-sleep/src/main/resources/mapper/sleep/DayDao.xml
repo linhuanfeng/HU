@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hu.health.sleep.dao.DayDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hu.health.sleep.entity.DayEntity" id="dayMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="date" column="date"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="duration" column="Duration"/>
+    </resultMap>
+<select id="selectWeekList" resultType="com.hu.health.sleep.entity.DayEntity">
+    SELECT * FROM sleep_day where user_id=#{user_id,jdbcType=BIGINT} and date  between #{beginweek,jdbcType=DATE} and #{endweek,jdbcType=DATE}
+</select>
+
+
+    <select id="selectMonthList" resultType="com.hu.health.sleep.entity.DayEntity">
+        SELECT * FROM sleep_day where user_id=#{user_id,jdbcType=BIGINT} and date  between #{beginweek,jdbcType=DATE} and #{endweek,jdbcType=DATE}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,274 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#d1efff",
+        "navigationStyle": "default"
+      }
+    },
+    {
+      "path": "pages/HomePage/HomePage",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#d1efff",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/HomePage/HealthyTest",
+      "style": {
+        "navigationBarTitleText": " ",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "custom",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/HomePage/HealthyReport",
+      "style": {
+        "navigationBarTitleText": " ",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "custom",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/HomePage/UserInfo",
+      "style": {
+        "navigationBarTitleText": " ",
+        "navigationBarBackgroundColor": "#83C6E8",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/HomePage/ChangeUserInfo",
+      "style": {
+        "navigationBarTitleText": "个人资料",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/AutognosisPage/AutognosisPage",
+      "style": {
+        "navigationBarTitleText": "自诊",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "default"
+      }
+    },
+    {
+      "path": "pages/DoctorTalk/DoctorTalk",
+      "style": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/DoctorTalk/ConnectionPage",
+      "style": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/DoctorTalk/TalkDetail",
+      "style": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationStyle": "default",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/RealTimeInfo/RealTimeInfo",
+      "style": {
+        "navigationBarTitleText": "H-U资讯",
+        "navigationStyle": "default",
+        "navigationBarBackgroundColor": "#ffffff",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/Search/Search",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarBackgroundColor": "#ffffff",
+        "disableScroll": true
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages_autognosis",
+      "pages": [
+        {
+          "path": "organs/Stomach/Stomach",
+          "style": {
+            "navigationBarTitleText": "查疾病",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "organs/Stomach/Disease",
+          "style": {
+            "navigationBarTitleText": "查疾病",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "organs/Stomach/DiseaseDetails",
+          "style": {
+            "navigationBarTitleText": "疾病详情卡",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages_three_module",
+      "pages": [
+        {
+          "path": "Diet/Diet",
+          "style": {
+            "navigationBarTitleText": "今日摄入",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Diet/Breakfast",
+          "style": {
+            "navigationBarTitleText": "早餐",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Diet/Lunch",
+          "style": {
+            "navigationBarTitleText": "午餐",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Diet/Dinner",
+          "style": {
+            "navigationBarTitleText": "晚餐",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Exercise/Exercise",
+          "style": {
+            "navigationBarTitleText": "首页",
+            "navigationBarBackgroundColor": "#83C6E8",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Exercise/Sport",
+          "style": {
+            "navigationBarTitleText": "运动",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Exercise/Communication",
+          "style": {
+            "navigationBarTitleText": "排行",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Sleep/Sleep",
+          "style": {
+            "navigationBarTitleText": "睡眠",
+            "navigationStyle": "custom",
+            "navigationBarBackgroundColor": "#ffffff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Sleep/SleepReport",
+          "style": {
+            "navigationBarTitleText": "睡眠报告界面",
+            "navigationStyle": "default",
+            "navigationBarBackgroundColor": "#313233",
+            "navigationBarTextStyle": "white",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "Sleep/SongPage",
+          "style": {
+            "navigationBarTitleText": "助眠歌曲",
+            "navigationStyle": "default",
+            "navigationBarBackgroundColor": "#313233",
+            "navigationBarTextStyle": "white",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#595B5B",
+    "selectedColor": "#00C4F7",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/HomePage/HomePage",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/homeSelected.png"
+      },
+      {
+        "pagePath": "pages/AutognosisPage/AutognosisPage",
+        "text": "自诊",
+        "iconPath": "static/tabbar/autognosis.png",
+        "selectedIconPath": "static/tabbar/autognosisSelected.png"
+      },
+      {
+        "pagePath": "pages/DoctorTalk/DoctorTalk",
+        "text": "青聊",
+        "iconPath": "static/tabbar/doctortalk.png",
+        "selectedIconPath": "static/tabbar/doctortalkSelected.png"
+      },
+      {
+        "pagePath": "pages/RealTimeInfo/RealTimeInfo",
+        "text": "资讯",
+        "iconPath": "static/tabbar/information.png",
+        "selectedIconPath": "static/tabbar/informationSelected.png"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "RangeDatePick": "@/components/pyh-rdtpicker/pyh-rdtpicker.vue",
+      "^z-sw(.*)": "@zebra-ui/swiper/components/z-sw$1/z-sw$1.vue",
+      "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
+    }
+  }
+}

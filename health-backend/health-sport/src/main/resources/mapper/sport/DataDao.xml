@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hu.health.sport.dao.DataDao">
+
+    <sql id="dataDetailSql">
+                select sum(duration) durations,t.small_img,t.big_img,t.tip,t.level typeLevel,t.name typeName
+        from sport_data d,sport_type t
+    </sql>
+    <sql id="groupCondition">
+        group by t.id,t.small_img,t.big_img, t.tip, t.level,t.name
+    </sql>
+    <update id="updateDurations">
+        update sport_data set duration=duration+#{duration} where id=#{id}
+    </update>
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hu.health.sport.entity.DataEntity" id="dataMap">
+        <result property="id" column="id"/>
+        <result property="date" column="date"/>
+        <result property="type" column="type"/>
+        <result property="duration" column="duration"/>
+    </resultMap>
+    <select id="dataDetail" resultType="com.hu.health.sport.vo.SportDataDetailsVo">
+        <include refid="dataDetailSql"></include>
+        <where>
+            d.type=t.id and d.user_id=#{uid} and to_days(now())-to_days(d.date)=#{day}
+            /*0--表示今天  1--表示昨天 2--表示前天 依次类推*/
+            <include refid="groupCondition"></include>
+        </where>
+    </select>
+    <select id="dataDetailWeek" resultType="com.hu.health.sport.vo.SportDataDetailsVo">
+        <include refid="dataDetailSql"></include>
+        <where>
+            d.type=t.id and d.user_id=#{uid} and YEARWEEK(now()) - YEARWEEK(date_format(d.date,'%Y-%m-%d')) =#{week}
+            /*0--表示今天  1--表示昨天 2--表示前天 依次类推*/
+            <include refid="groupCondition"></include>
+        </where>
+    </select>
+    <select id="dataDetailMonth" resultType="com.hu.health.sport.vo.SportDataDetailsVo">
+        <include refid="dataDetailSql"></include>
+        <where>
+            d.type=t.id and d.user_id=#{uid} and date_format(d.date,'%Y-%m')=date_format(DATE_SUB(curdate(), INTERVAL #{month} MONTH),'%Y-%m')
+            /*0--表示今天  1--表示昨天 2--表示前天 依次类推*/
+            <include refid="groupCondition"></include>
+        </where>
+    </select>
+    <select id="hashSameTypeToday" resultType="com.hu.health.sport.entity.DataEntity">
+        select * from sport_data
+        <where>
+            date=current_date() and type=#{type} and user_id=#{userId}
+        </where>
+        limit 1
+    </select>
+
+
+</mapper>

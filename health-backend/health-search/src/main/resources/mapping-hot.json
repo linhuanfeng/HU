@@ -1,0 +1,9 @@
+{
+  "mappings": {
+    "properties": {
+      "hotWord":{
+        "type": "keyword"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "query": {
+    "term": {
+      "userId": 1
+    }
+  },
+  "aggs": {
+    "last_three_day_max_areaName": {
+      "terms": {
+        "field": "areaName"
+      }
+    },
+    "last_three_day_max_tag":{
+      "terms": {
+        "field": "tag"
+      }
+    }
+  }
+}

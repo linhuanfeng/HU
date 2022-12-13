@@ -1,0 +1,68 @@
+{
+  "function_score" : {
+    "query" : {
+      "bool" : {
+        "should" : [
+          {
+            "match" : {
+              "all" : {
+                "query" : "编程区",
+                "operator" : "OR",
+                "prefix_length" : 0,
+                "max_expansions" : 50,
+                "fuzzy_transpositions" : true,
+                "lenient" : false,
+                "zero_terms_query" : "NONE",
+                "auto_generate_synonyms_phrase_query" : true,
+                "boost" : 1.0
+              }
+            }
+          }
+        ],
+        "adjust_pure_negative" : true,
+        "boost" : 1.0
+      }
+    },
+    "functions" : [
+      {
+        "filter" : {
+          "match_all" : {
+            "boost" : 1.0
+          }
+        },
+        "script_score" : {
+          "script" : {
+            "source" : "_score + doc['likeCount'].value*10+doc['viewCount'].value",
+            "lang" : "painless"
+          }
+        }
+      },
+      {
+        "filter" : {
+          "term" : {
+            "areaName" : {
+              "value" : "钓鱼区",
+              "boost" : 1.0
+            }
+          }
+        },
+        "weight" : 10.0
+      },
+      {
+        "filter" : {
+          "term" : {
+            "tag" : {
+              "value" : "java",
+              "boost" : 1.0
+            }
+          }
+        },
+        "weight" : 10.0
+      }
+    ],
+    "score_mode" : "multiply",
+    "boost_mode" : "avg",
+    "max_boost" : 3.4028235E38,
+    "boost" : 1.0
+  }
+}

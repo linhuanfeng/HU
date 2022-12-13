@@ -1,0 +1,42 @@
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://114.132.44.209:3306/health_consult?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:9990
+  # 配置读写分离主从数据源
+  mastersources:
+    -  driverClassName: com.mysql.cj.jdbc.Driver
+       url: jdbc:mysql://114.132.44.209:3306/health_consult?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+       username: root
+       password: root
+       type: com.alibaba.druid.pool.DruidDataSource
+
+  slavesources:
+    - driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://114.132.44.209:3307/health_consult?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
+      type: com.alibaba.druid.pool.DruidDataSource
+seata:
+  registry:
+    type: nacos
+    nacos: # tc的地址
+      # 如何在注册中心找到一个服务：namespce->group->service->cluster
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      application: seata-tc-server
+      # 还差个集群名称：根据下面的事务组找映射关系，再找到集群名称
+  tx-service-group: seata-demo  # 事务组，根据这个获取tc服务的cluster名称  （有什么用：想要被tc管理就得在同个事务组内，可用于集群容错）
+  service:
+    vgroup-mapping: # 事务组与TC服务cluster的映射关系
+      seata-demo: DG
+  data-source-proxy-mode: XA

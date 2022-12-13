@@ -1,0 +1,53 @@
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://114.132.44.209:3306/health_diet?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 114.132.44.209:8848
+  application:
+    name: health-diet
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 8083
+
+##hystrix的超时时间
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000000
+##ribbon的超时时间
+#ribbon:
+#  ReadTimeout: 3000000
+#  ConnectTimeout: 3000000
+
+seata:
+  registry:
+    type: nacos
+    nacos: # tc的地址
+      # 如何在注册中心找到一个服务：namespce->group->service->cluster
+      server-addr: 114.132.44.209:8848
+      namespace: ""
+      group: SEATA_GROUP
+      application: seata-tc-server
+      # 还差个集群名称：根据下面的事务组找映射关系，再找到集群名称
+  tx-service-group: seata-demo  # 事务组，根据这个获取tc服务的cluster名称  （有什么用：想要被tc管理就得在同个事务组内，可用于集群容错）
+  service:
+    vgroup-mapping: # 事务组与TC服务cluster的映射关系
+      seata-demo: DG
+  data-source-proxy-mode: XA

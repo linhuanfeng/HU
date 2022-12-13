@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hu.health.diet.dao.DietMenuDao">
+
+    <select id="showbreakfast"  parameterType="Long" resultType="com.hu.health.diet.entity.DietMenuEntity">
+        select * from diet_menu where cat_id=${id}
+    </select>
+    <select id="showlunch"  parameterType="Long" resultType="com.hu.health.diet.entity.DietMenuEntity">
+        select * from diet_menu where cat_id=${id}
+    </select>
+    <select id="showdinner"  parameterType="Long" resultType="com.hu.health.diet.entity.DietMenuEntity">
+        select * from diet_menu where cat_id=${id}
+    </select>
+    <select id="showadds"  parameterType="Long" resultType="com.hu.health.diet.entity.DietMenuEntity">
+        select * from diet_menu where cat_id=${id}
+    </select>
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hu.health.diet.entity.DietMenuEntity" id="dietMenuMap">
+        <result property="catId" column="cat_id"/>
+        <result property="name" column="name"/>
+        <result property="parentCid" column="parent_cid"/>
+        <result property="catLevel" column="cat_level"/>
+        <result property="showStatus" column="show_status"/>
+        <result property="sort" column="sort"/>
+        <result property="icon" column="icon"/>
+        <result property="quantityOfHeat" column="quantity_of_heat"/>
+        <result property="carbonWaterRatio" column="carbon_water_ratio"/>
+        <result property="proportionOfFat" column="proportion_of_fat"/>
+        <result property="proportionOfProtein" column="proportion_of_protein"/>
+    </resultMap>
+
+
+</mapper>

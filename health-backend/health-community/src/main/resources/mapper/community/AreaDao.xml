@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hu.health.community.dao.AreaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hu.health.community.entity.AreaEntity" id="areaMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="img" column="img"/>
+        <result property="fanCount" column="fan_count"/>
+        <result property="creator" column="creator"/>
+        <result property="questionCount" column="question_count"/>
+        <result property="viewCount" column="view_count"/>
+        <result property="likeCount" column="like_count"/>
+        <result property="tag" column="tag"/>
+        <result property="sticky" column="sticky"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifiedTime" column="modified_time"/>
+    </resultMap>
+
+
+</mapper>

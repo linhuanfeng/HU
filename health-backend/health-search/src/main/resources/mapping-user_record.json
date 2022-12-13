@@ -1,0 +1,21 @@
+{
+  "mappings": {
+    "properties": {
+      "userId": {
+        "type": "long"
+      },
+      "areaName": {
+        "type": "keyword"
+      },
+      "tag": {
+        "type": "keyword"
+      },
+      "keyWord":{
+        "type": "keyword"
+      },
+      "createTime": {
+        "type": "date"
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一片枫叶</title>
+    <style>
+        /* 初始化设置 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            background: url(../images/bg.gif) no-repeat center top ;
+        }
+        ul li{
+            list-style: none;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        /* 主体 */
+        .container{
+            width: 980px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        /* 页首 */
+        header{
+            padding-bottom: 15px;
+            background: url(../images/main_line.jpg) repeat-x bottom;
+        }
+        /*.mainnav{*/
+        /*    background: url(../images/main_menu_bg.gif) repeat-x;*/
+        /*}*/
+        /*.mainnav ul {*/
+        /*    font-size: 15px;*/
+        /*    font-weight: bold;*/
+        /*    padding: 9px 0 8px 0;*/
+        /*    margin-left: 14px;*/
+        /*}*/
+        /*.mainnav ul li{*/
+        /*    display: inline-block;*/
+        /*    padding: 0 20px 0 18px;*/
+        /*    border-right: 1px solid #88180f;*/
+        /*}*/
+        /*.mainnav ul li:last-child{*/
+        /*    border: none;*/
+        /*}*/
+        /*.mainnav ul li a{*/
+        /*    color: #fff;*/
+        /*}*/
+        /*.mainnav ul li a:hover{*/
+        /*    color: lightgray*/
+        /*}*/
+
+        .subnav ul{
+            text-align: center;
+            margin: 10px 0;
+        }
+        .subnav ul li{
+            padding-right: 5px;
+            margin-right: 5px;
+            display: inline-block;
+            border-right: 1px solid rgb(158, 158, 158);
+        }
+        .subnav ul li:last-child{
+            border: none;
+        }
+        .subnav ul li a{
+            color: rgb(158, 158, 158);
+        }
+        .subnav ul li a:hover{
+            color: rgb(122, 121, 121);
+        }
+        /* 页面主体 */
+        .main{
+            overflow: hidden;
+        }
+        .leftside{
+            display: inline-block;
+            width: 210px;
+        }
+        .leftside ul{
+            border: 1px solid rgb(158, 158, 158);
+
+        }
+        .leftside ul li{
+            background: url(../images/directory_bg_big.gif) no-repeat;
+            padding: 0 0 0 50px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .leftside ul li a:hover{
+            color: rgb(158, 158, 158);
+        }
+
+        .content{
+            float: right;
+            width: 743px;
+            border:1px solid rgb(158, 158, 158);
+        }
+        .title{
+            background: url(../images/content_bg.jpg);
+        }
+        .title h1{
+            margin-left: 50px;
+            height: 31px;
+            line-height: 31px;
+            font-size: 15px;
+        }
+        .text{
+            margin-left: 25px;
+        }
+        .text h2{
+            font-size: 15px;
+            margin: 20px 0 10px 0;
+        }
+        .text p{
+            line-height: 1.5em;
+            margin: 10px 0;
+        }
+        .footer{
+            margin-top: 10px;
+            background: url(../images/bottom_bg.gif) repeat-x;
+        }
+        .footer ul{
+            text-align: center;
+            padding: 5px 0;
+        }
+        .footer ul li{
+            display: inline-block;
+            margin-right: 7px;
+            padding-right: 8px;
+            border-right: 1px solid #999;
+        }
+        .footer ul li:last-child{
+            border: none;
+        }
+        .footer ul li a{
+            color: #fff;
+        }
+        .footer ul li a:hover{
+            color: rgb(158, 158, 158);
+        }
+        .holder{
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="holder">
+
+    </div>
+    <!-- 页首 -->
+    <header>
+        <!-- 主导航 -->
+        <nav class="mainnav">
+            <ul>
+                <li><a href="#">一片枫叶</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 页面主体 -->
+    <div class="main">
+        <div class="leftside">
+            <ul>
+                <li><a href="#">MYSQL</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">TCP</a></li>
+                <li><a href="#">UDP</a></li>
+                <li><a href="#">Linux</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="title">
+                <h1>MySQL</h1>
+            </div>
+            <div class="text">
+                <h2>索引哪些情况会失效</h2>
+                <p>-查询条件包含or，可能导致索引失效</p>
+                <p>-如何字段类型是字符串，where时一定用引号括起来，否则索引失效</p>
+                <p>-like通配符可能导致索引失效。</p>
+                <p>-联合索引，查询时的条件列不是联合索引中的第一个列，索引失效。</p>
+                <p>-在索引列上使用mysql的内置函数，索引失效。</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <nav class="mainnav">
+        <ul>
+            <li><a target = "_blank" href="https://beian.miit.gov.cn/">粤ICP备2021163156号</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

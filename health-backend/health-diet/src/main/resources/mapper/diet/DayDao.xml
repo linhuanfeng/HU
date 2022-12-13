@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hu.health.diet.dao.DayDao">
+
+
+<!--   <update id="addBreakfast">-->
+<!--     update diet_day set breakfast=#{breakfast,jdbcType=char} where userid=#{user_id,jdbcType=bigint} and day=#{date,jdbcType=char}-->
+<!--   </update>-->
+<!--    -->
+    <update id="updateBreakfast" >
+        update diet_day set brekfast=#{breakfast,jdbcType=CHAR} where user_id=#{user_id,jdbcType=BIGINT} and day=#{date,jdbcType=CHAR}
+    </update>
+
+    <update id="updateLunch" >
+        update diet_day set lunch=#{lunch,jdbcType=CHAR} where user_id=#{user_id,jdbcType=BIGINT} and day=#{date,jdbcType=CHAR}
+    </update>
+
+    <update id="updateDinner" >
+        update diet_day set dinner=#{dinner,jdbcType=CHAR} where user_id=#{user_id,jdbcType=BIGINT} and day=#{date,jdbcType=CHAR}
+    </update>
+
+    <update id="updateAdds" >
+        update diet_day set adds=#{adds,jdbcType=CHAR} where user_id=#{user_id,jdbcType=BIGINT} and day=#{date,jdbcType=CHAR}
+    </update>
+
+
+    <select id="selectWeekList" resultType="com.hu.health.diet.entity.DayEntity">
+        SELECT * FROM diet_day where user_id=#{user_id,jdbcType=BIGINT} and date  between #{beginweek,jdbcType=DATE} and #{endweek,jdbcType=DATE}
+    </select>
+
+
+    <select id="selectMonthList" resultType="com.hu.health.diet.entity.DayEntity">
+        SELECT * FROM diet_day where user_id=#{user_id,jdbcType=BIGINT} and date  between #{beginweek,jdbcType=DATE} and #{endweek,jdbcType=DATE}
+    </select>
+
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hu.health.diet.entity.DayEntity" id="dayMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="brekfast" column="brekfast"/>
+        <result property="lunch" column="lunch"/>
+        <result property="dinner" column="dinner"/>
+        <result property="add" column="add"/>
+        <result property="day" column="day"/>
+    </resultMap>
+
+
+</mapper>

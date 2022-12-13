@@ -1,0 +1,58 @@
+{
+  "function_score" : {
+    "query" : {
+      "bool" : {
+        "must" : [
+          {
+            "match" : {
+              "all" : {
+                "query" : "区",
+                "boost" : 1.0
+              }
+            }
+          }
+        ]
+      }
+    },
+    "functions" : [
+      {
+        "filter" : {
+          "match_all" : {
+            "boost" : 1.0
+          }
+        },
+        "script_score" : {
+          "script" : {
+            "source" : "_score + doc['likeCount'].value*10+doc['viewCount'].value"
+          }
+        }
+      },
+      {
+        "filter" : {
+          "term" : {
+            "areaName" : {
+              "value" : "钓鱼区",
+              "boost" : 1.0
+            }
+          }
+        },
+        "weight" : 10.0
+      },
+      {
+        "filter" : {
+          "term" : {
+            "tag" : {
+              "value" : "python",
+              "boost" : 1.0
+            }
+          }
+        },
+        "weight" : 10.0
+      }
+    ],
+    "score_mode" : "multiply",
+    "boost_mode" : "avg",
+    "max_boost" : 3.4028235E38,
+    "boost" : 1.0
+  }
+}
