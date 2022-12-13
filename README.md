@@ -2,7 +2,7 @@
 
 ## 简介
 
-这是一个基于SpringCloudAlibaba，uni-app的前后端分离的养身系统，提供小程序界面+后台服务的整套系统源码。
+这是一个基于SpringCloudAlibaba，uni-app的前后端分离的医疗论坛系统，提供小程序界面+后台服务的整套系统源码。
 
 - 你可以拿它作为前端uni-app学习的练手教程；
 - 你也可以把它作为SpringCloudAlibaba服务化思想的学习项目；
@@ -25,10 +25,10 @@
 
 ## 模块分层
 
-### 后端模块
+### 服务端
 
 ```shell
-dbblog
+health-backend
 ├── health-common   # 公共模块
 │   ├── pom.xml
 │   └── src
@@ -61,17 +61,13 @@ dbblog
 └── └── src
 ```
 
-### 前端模块
+### 前端
 
-#### uni-app
+health-mp
 
-待完善
+基于uni-app
 
 ![image-20221213175518283](README.assets/image-20221213175518283.png)
-
-#### 后台管理页面
-
-待完善
 
 ## 项目部署
 
